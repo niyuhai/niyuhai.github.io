@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠愈安 - 动物慢性病智能诊断系统</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入图标库 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#22C55E', // 主色调：健康绿
+                        secondary: '#F97316', // 辅助色：温暖橙
+                        neutral: '#F8FAFC', // 中性色：浅灰
+                        petDark: '#1E293B', // 深色文本
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .shadow-soft {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            }
+            .transition-smooth {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .bg-pet-gradient {
+                background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-neutral text-petDark min-h-screen flex flex-col">
+    <!-- 页面头部 -->
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- 品牌Logo -->
+                <div class="w-12 h-12 rounded-full bg-pet-gradient flex items-center justify-center text-white">
+                    <i class="fa fa-paw text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-petDark">宠愈安</h1>
+                    <p class="text-xs text-gray-500">动物慢性病智能诊断系统</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#features" class="text-gray-600 hover:text-primary transition-smooth">核心功能</a>
+                <a href="#trust" class="text-gray-600 hover:text-primary transition-smooth">专业保障</a>
+                <a href="#about" class="text-gray-600 hover:text-primary transition-smooth">关于我们</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-smooth">
+                    登录后台
+                </a>
+            </nav>
+            <button class="md:hidden text-gray-700">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 页面主体 -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <!-- 英雄区域（聚焦慢性病诊断） -->
+        <section class="text-center mb-16 md:mb-24">
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-6">
+                    宠物健康守护专家
+                </div>
+                <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-petDark mb-6 leading-tight">
+                    智能诊断动物慢性病，<br class="md:hidden">为宠物健康保驾护航
+                </h2>
+                <p class="text-gray-600 text-lg mb-8">
+                    点击右下角「诊断助手」，输入宠物症状（如长期呕吐、体重骤降等），获取专业慢性病分析建议，辅助兽医精准判断。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-6 py-3 rounded-full bg-pet-gradient text-white hover:opacity-90 transition-smooth shadow-soft">
+                        了解慢性病类型 <i class="fa fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="px-6 py-3 rounded-full border border-gray-300 text-gray-700 hover:border-primary hover:text-primary transition-smooth">
+                        <i class="fa fa-play-circle mr-2"></i> 观看使用教程
+                    </button>
+                </div>
+            </div>
+            <!-- 宠物插图（增强场景感） -->
+            <div class="mt-12 max-w-2xl mx-auto">
+                <img src="https://picsum.photos/id/237/800/400" alt="宠物健康诊断" class="w-full h-auto rounded-xl shadow-soft">
+            </div>
+        </section>
+
+        <!-- 核心功能区域（围绕慢性病诊断） -->
+        <section id="features" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- 功能1：慢性病筛查 -->
+            <div class="bg-white rounded-xl p-6 shadow-soft hover:shadow-lg transition-smooth">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                    <i class="fa fa-stethoscope text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">慢性病筛查</h3>
+                <p class="text-gray-600">针对糖尿病、肾病、关节病等常见宠物慢性病，通过症状描述快速初步筛查，减少误诊风险。</p>
+            </div>
+            <!-- 功能2：症状分析 -->
+            <div class="bg-white rounded-xl p-6 shadow-soft hover:shadow-lg transition-smooth">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                    <i class="fa fa-list-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">症状智能分析</h3>
+                <p class="text-gray-600">输入宠物症状（如食欲变化、活动量减少），系统结合医学数据库给出可能病因与建议检查项目。</p>
+            </div>
+            <!-- 功能3：健康档案 -->
+            <div class="bg-white rounded-xl p-6 shadow-soft hover:shadow-lg transition-smooth">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                    <i class="fa fa-folder-open text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">健康档案管理</h3>
+                <p class="text-gray-600">记录宠物历次诊断结果与用药情况，形成长期健康档案，辅助跟踪慢性病发展趋势。</p>
+            </div>
+        </section>
+
+        <!-- 专业保障区域（增强信任感） -->
+        <section id="trust" class="bg-white rounded-2xl p-8 md:p-12 shadow-soft mb-16">
+            <h3 class="text-2xl font-bold mb-8 text-center">专业保障，安心选择</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-user-md text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">兽医团队支持</h4>
+                    <p class="text-gray-600 text-sm">联合执业兽医优化诊断模型，确保建议专业可靠</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-database text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">海量病例库</h4>
+                    <p class="text-gray-600 text-sm">基于数万份宠物慢性病病例训练，诊断准确率高</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-lock text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">数据安全加密</h4>
+                    <p class="text-gray-600 text-sm">宠物健康数据加密存储，严格保护用户隐私</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                        <i class="fa fa-clock-o text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold mb-2">7×24小时响应</h4>
+                    <p class="text-gray-600 text-sm">随时调用诊断助手，紧急情况快速获取建议</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们区域 -->
+        <section id="about" class="max-w-3xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">关于宠愈安</h3>
+            <p class="text-gray-600 mb-4">
+                宠愈安是专注于动物慢性病智能诊断的平台，致力于通过AI技术辅助宠物医疗，解决传统诊断中“慢性病难发现、易误诊”的痛点，为宠物医院与养宠用户提供专业工具支持。
+            </p>
+            <p class="text-gray-600">
+                我们的愿景：让每一只宠物都能得到及时、精准的健康守护，延长宠物健康生命周期。
+            </p>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-petDark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+                        <i class="fa fa-paw"></i>
+                    </div>
+                    <span class="font-semibold">宠愈安 © 2025</span>
+                </div>
+                <div class="flex gap-6 text-gray-400">
+                    <a href="#" class="hover:text-white transition-smooth">隐私政策</a>
+                    <a href="#" class="hover:text-white transition-smooth">使用条款</a>
+                    <a href="#" class="hover:text-white transition-smooth">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 右下角悬浮触发按钮 -->
+    <button id="chatTrigger" class="fixed right-6 bottom-6 w-16 h-16 rounded-full bg-pet-gradient text-white shadow-lg flex items-center justify-center hover:scale-110 transition-smooth z-50">
+        <i class="fa fa-paw text-2xl"></i>
+    </button>
+
+    <!-- 核心修复：按要求将安装代码添加到body区域，修复初始化逻辑 -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+        // 标记智能体是否已初始化（防止重复创建）
+        let isCozeInitialized = false;
+
+        // 页面加载完成后绑定点击事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatTrigger = document.getElementById('chatTrigger');
+
+            // 点击悬浮按钮时初始化智能体（使用你提供的标准配置）
+            chatTrigger.addEventListener('click', function() {
+                if (isCozeInitialized) return;
+
+                // 你的标准安装代码（已整合到点击事件中）
+                new CozeWebSDK.WebChatClient({
+                    config: {
+                        bot_id: '7568029322926211072', // 保持你的智能体ID
+                        // 保留场景化欢迎语（不影响核心功能）
+                        welcome_message: '您好！我是宠愈安诊断助手，请描述宠物症状获取慢性病分析~'
+                    },
+                    componentProps: {
+                        title: '宠愈安诊断助手', // 替换默认标题
+                    },
+                    auth: {
+                        type: 'token',
+                        // 关键修复：替换为你的有效PAT（必须修改！）
+                        token: 'pat_RQSIRgLfM96SmBaXVlpIBAVSg153ArTlRDBljvQomprbsyFj3nqwgpPhujJ8LnzC',
+                        onRefreshToken: function () {
+                            // 关键修复：返回你的有效PAT
+                            return 'pat_RQSIRgLfM96SmBaXVlpIBAVSg153ArTlRDBljvQomprbsyFj3nqwgpPhujJ8LnzC';
+                        }
+                    }
+                });
+
+                isCozeInitialized = true;
+                this.style.display = 'none'; // 隐藏按钮避免重复点击
+            });
+        });
+    </script>
+</body>
+</html>
